@@ -61,7 +61,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Menu() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Product</NavigationMenuTrigger>
@@ -101,19 +101,79 @@ export function Menu() {
                     <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
                         <PiSparkleLight className="text-2xl mr-2 text-purple-600" />
                         <div>
-                            <a>Bird Assistant</a>
+                            <a>Mahiti Assistant</a>
                             <p className="text-gray-400 text-sm font-light">
                                 Integrated AI assistant 
                             </p>
                         </div>
                     </div>
-
                 </ul>
+
+                <div>
+                  <ul className="grid p-2 md:w-[400px] lg:w-[250px] hover:cursor-pointer border-r">
+                    <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                      <div>
+                            <a>Mahiti Assistant</a>
+                            <p className="text-gray-400 text-sm font-light">
+                                Integrated AI assistant 
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                      <div>
+                            <a>Mahiti Assistant</a>
+                            <p className="text-gray-400 text-sm font-light">
+                                Integrated AI assistant 
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                      <div>
+                            <a>Mahiti Assistant</a>
+                            <p className="text-gray-400 text-sm font-light">
+                                Integrated AI assistant 
+                            </p>
+                        </div>
+                    </div>
+                  </ul>
+                </div>
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Downloads</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -131,7 +191,7 @@ export function Menu() {
         <NavigationMenuItem>
           <Link href="/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              Pricing
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
